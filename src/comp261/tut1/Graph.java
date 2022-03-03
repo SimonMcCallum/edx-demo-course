@@ -38,7 +38,6 @@ public class Graph {
         adjacencyMatrix = new double[nodeList.size()][nodeList.size()];
         for (Edge e : edgeList) {
             adjacencyMatrix[e.getFrom()][e.getTo()] = e.getWeight();
-            adjacencyMatrix[e.getTo()][e.getFrom()] = e.getWeight();
         }
     }
 

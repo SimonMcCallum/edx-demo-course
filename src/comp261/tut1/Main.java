@@ -17,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         // load the lanugage file - supported "en" English and "mi" Maori
-        Locale locale = new Locale("en", "NZ");
+        Locale locale = new Locale("mi", "NZ");
         ResourceBundle bundle = ResourceBundle.getBundle("comp261/tut1/strings", locale);
         
         // load the FXML file
