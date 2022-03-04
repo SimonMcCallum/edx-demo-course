@@ -73,7 +73,7 @@ public class GraphController {
         System.out.println("Handling event " + event.getEventType());
         FileChooser fileChooser = new FileChooser();
         //Set to user directory or go to default if cannot access
-        File defaultNodePath = new File("D:/git/comp261/2022/code/Tutorials/Tut-1/data/");
+        File defaultNodePath = new File("data/");
         if(!defaultNodePath.canRead()) {
             defaultNodePath = new File("C:/");
         }
@@ -235,7 +235,8 @@ Drawing the graph on the canvas
             gc.strokeLine(startX, startY, endX, endY);
         });
 
-        //draw adjacency matrix for the node selected
+        
+        //print to standard out adjacency matrix for the node selected
         if(highlightNodes.size() > 0) {
             Node node = highlightNodes.get(0);
             double[][] adjacencyMatrix = graph.getAdjacencyMatrix();

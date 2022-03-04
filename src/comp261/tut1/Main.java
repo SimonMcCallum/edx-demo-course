@@ -17,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         // load the lanugage file - supported "en" English and "mi" Maori
-        Locale locale = new Locale("mi", "NZ");
+        Locale locale = new Locale("en", "NZ");
         ResourceBundle bundle = ResourceBundle.getBundle("comp261/tut1/strings", locale);
         
         // load the FXML file
@@ -31,10 +31,16 @@ public class Main extends Application {
             System.exit(0);
         });
 
-        
-        graph = new Graph(new File("D:/git/comp261/2022/code/Tutorials/Tut-1/data/node.csv"), new File("D:/git/comp261/2022/code/Tutorials/Tut-1/data/edge.csv"));
-        //           loader.getController().drawGraph();  // we have to cast to get to the Controller code
-        ((GraphController)loader.getController()).drawGraph();
+        // To prevent crashing incase the files are not in the right location load them and check for null
+        File nodeFile = new File("data/node.csv");
+        File edgeFile = new File("data/edge.csv");
+        if (!nodeFile.exists() || !edgeFile.exists()) {
+            System.out.println("Files not found");
+        } else {
+            graph = new Graph(nodeFile, edgeFile);
+            //           loader.getController().drawGraph();  // we have to cast to get to the Controller code
+            ((GraphController)loader.getController()).drawGraph();
+        }
     }
 
 
