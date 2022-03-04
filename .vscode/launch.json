@@ -13,7 +13,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "comp261.tut1.Main",
-            "vmArgs": "--module-path /usr/pkg/java/javafx-sdk-11.0.2/lib/ --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path \"${env:PATH_TO_FX}\" --add-modules javafx.controls,javafx.fxml",
         }
     ]
 }
